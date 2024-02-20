@@ -1,2 +1,3 @@
-# Titre de mon projet
-bla bla bla et bla bla 
+# Cube Story
+Voici le fichier README ou nous allons vous informer d'on ne sait quoi.
+Voila voila
