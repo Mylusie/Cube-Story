@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43460017, g: 0.4815958, b: 0.5625198, a: 1}
+  m_IndirectSpecularColor: {r: 0.43460038, g: 0.48159623, b: 0.56252044, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -554,6 +554,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3779470537144863991, guid: d414f87f7ccd86543a8b4ac3bdd4f256, type: 3}
+--- !u!1 &292974309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9014170783809206332, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 2103919096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &292974311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292974309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6591c692a19c6324ab57a7a5486e57c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  moveForwardKey: 119
+  moveBackwardKey: 115
+  strafeLeftKey: 97
+  strafeRightKey: 100
 --- !u!1 &408217536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 492440804577196729, guid: d414f87f7ccd86543a8b4ac3bdd4f256, type: 3}
@@ -2716,7 +2738,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -6733177361254619370, guid: d414f87f7ccd86543a8b4ac3bdd4f256, type: 3}
   m_PrefabInstance: {fileID: 1917302166}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1305603096
+--- !u!64 &1305603100
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5324,7 +5346,7 @@ PrefabInstance:
       addedObject: {fileID: 1525776183}
     - targetCorrespondingSourceObject: {fileID: -6733177361254619370, guid: d414f87f7ccd86543a8b4ac3bdd4f256, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1305603096}
+      addedObject: {fileID: 1305603100}
     - targetCorrespondingSourceObject: {fileID: -8380157826906577798, guid: d414f87f7ccd86543a8b4ac3bdd4f256, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1615875438}
@@ -5486,6 +5508,22 @@ PrefabInstance:
     - target: {fileID: 3127728407712097239, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Center.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127728407712097246, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_TrackingType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127728407712097246, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_PositionInput.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127728407712097246, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_RotationInput.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127728407712097246, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_TrackingStateInput.m_UseReference
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3297350933651850364, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LeftController
@@ -5699,6 +5737,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.34
       objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
+      objectReference: {fileID: 0}
     - target: {fileID: 9168142743249570444, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5747,6 +5793,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 449852}
+    - targetCorrespondingSourceObject: {fileID: 9014170783809206332, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 292974311}
     - targetCorrespondingSourceObject: {fileID: 3415145736139425353, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1292743244}

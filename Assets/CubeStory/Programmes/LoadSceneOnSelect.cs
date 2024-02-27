@@ -15,8 +15,9 @@ public class LoadSceneOnSelect : MonoBehaviour
         if (IsObjectHighlighted(objectToInteractWith) && Input.GetKeyDown(selectButton))
         {
             // Charge la nouvelle scène et décharge l'ancienne
-            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(sceneToUnload);
+            SceneManager.LoadScene(sceneToLoad);
+            
         }
     }
 
