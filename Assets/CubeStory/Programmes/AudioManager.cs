@@ -1,33 +1,27 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
+
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource introAudioSource; // AudioSource pour l'audio d'introduction
-    public AudioClip introClip; // Clip audio pour l'introduction
-    public AudioSource loopAudioSource; // AudioSource pour l'audio en boucle
-    public AudioClip loopClip; // Clip audio pour la boucle
+    public AudioSource introAudioSource; // Source audio pour l'audio d'introduction
+    public AudioClip introClip; // Clip audio d'introduction
 
     void Start()
     {
-        // Assurez-vous que les AudioSource et les clips audio sont correctement configurés dans l'éditeur Unity
+        // Commence par charger la scÃ¨ne
+        StartCoroutine(LoadSceneWithDelay());
+    }
 
-        // Lancer l'audio d'introduction
+    IEnumerator LoadSceneWithDelay()
+    {
+        // Attendre 10 secondes
+        yield return new WaitForSeconds(3);
+
+        // Jouer l'audio d'introduction
         introAudioSource.clip = introClip;
         introAudioSource.Play();
 
-        // Lancer la coroutine pour jouer l'audio en boucle après la fin de l'audio d'introduction
-        StartCoroutine(PlayLoopAudioAfterIntro());
-    }
-
-    IEnumerator PlayLoopAudioAfterIntro()
-    {
-        // Attendre que l'audio d'introduction soit terminé
-        yield return new WaitForSeconds(introClip.length);
-
-        // Configurer et jouer l'audio en boucle
-        loopAudioSource.clip = loopClip;
-        loopAudioSource.loop = true;
-        loopAudioSource.Play();
     }
 }

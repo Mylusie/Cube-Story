@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections;
+
 
 public class AdaptiveRayLength : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class AdaptiveRayLength : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
+
+        Debug.DrawRay(transform.position, transform.forward * maxRayLength  , Color.red);
+
         if (rayInteractor.TryGetCurrent3DRaycastHit(out hit))
         {
             float distance = Mathf.Min(maxRayLength, hit.distance);
