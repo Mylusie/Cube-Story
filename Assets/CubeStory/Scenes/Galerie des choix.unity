@@ -2214,7 +2214,8 @@ MonoBehaviour:
   moveBackwardKey: 115
   strafeLeftKey: 97
   strafeRightKey: 100
-  audioClip: {fileID: 8300000, guid: 614a32725d454d04dbe6c7f753a75b1c, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: 614a32725d454d04dbe6c7f753a75b1c, type: 3}
 --- !u!1 &1039807787
 GameObject:
   m_ObjectHideFlags: 0

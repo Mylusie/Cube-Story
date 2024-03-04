@@ -1248,7 +1248,8 @@ MonoBehaviour:
   moveBackwardKey: 115
   strafeLeftKey: 97
   strafeRightKey: 100
-  audioClip: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 59a0ff0c821d3ba439f92026d3adcc20, type: 3}
 --- !u!136 &409888723
 CapsuleCollider:
   m_ObjectHideFlags: 0

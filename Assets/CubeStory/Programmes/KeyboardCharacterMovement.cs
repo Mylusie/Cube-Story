@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class XRCharacterController : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class XRCharacterController : MonoBehaviour
     public KeyCode strafeLeftKey = KeyCode.A; // Touche pour aller à gauche
     public KeyCode strafeRightKey = KeyCode.D; // Touche pour aller à droite
 
-    public AudioClip audioClip; // Clip audio à prendre en compte
+    public List<AudioClip> audioClips; // Liste des clips audio à prendre en compte
 
     private CharacterController characterController; // Référence au CharacterController
     private Vector3 moveDirection = Vector3.zero; // Direction de déplacement
@@ -24,15 +25,15 @@ public class XRCharacterController : MonoBehaviour
 
     void Update()
     {
-        // Vérifier si l'audioClip est en cours de lecture
+        // Vérifier si l'un des audioClips est en cours de lecture
         if (IsAudioClipPlaying())
         {
-            // Si l'audioClip est en cours de lecture, bloquer tout mouvement
+            // Si l'un des audioClips est en cours de lecture, bloquer tout mouvement
             moveDirection = Vector3.zero;
         }
         else
         {
-            // Si l'audioClip n'est pas en cours de lecture, gérer le mouvement normalement
+            // Si aucun des audioClips n'est en cours de lecture, gérer le mouvement normalement
 
             // Réinitialiser la direction de déplacement
             moveDirection = Vector3.zero;
@@ -68,12 +69,15 @@ public class XRCharacterController : MonoBehaviour
 
     bool IsAudioClipPlaying()
     {
-        // Vérifier si l'audioClip est en cours de lecture dans n'importe quel AudioSource
-        foreach (var audioSource in FindObjectsOfType<AudioSource>())
+        // Vérifier si l'un des audioClips est en cours de lecture dans n'importe quel AudioSource
+        foreach (var audioClip in audioClips)
         {
-            if (audioSource.clip == audioClip && audioSource.isPlaying)
+            foreach (var audioSource in FindObjectsOfType<AudioSource>())
             {
-                return true;
+                if (audioSource.clip == audioClip && audioSource.isPlaying)
+                {
+                    return true;
+                }
             }
         }
         return false;
