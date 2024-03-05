@@ -17,6 +17,7 @@ public class ObjectInteraction : MonoBehaviour
         {
             if (highlight)
             {
+                Debug.Log("sur");
                 // Appliquer la surbrillance
                 renderer.material.color = Color.yellow;
             }
@@ -42,9 +43,11 @@ public class ObjectInteraction : MonoBehaviour
             // Si l'objet touché fait partie du layer "Interaction"
             if (hitObject.layer == LayerMask.NameToLayer("Interaction"))
             {
+
                 // Si c'est un nouvel objet ou s'il est différent de l'objet déjà mis en surbrillance
                 if (hitObject != highlightedObject)
                 {
+
                     // Mettre en surbrillance l'objet touché
                     HighlightObject(hitObject, true);
 
@@ -60,6 +63,7 @@ public class ObjectInteraction : MonoBehaviour
             }
             else
             {
+
                 // Si l'objet touché n'appartient pas au layer "Interaction",
                 // désactiver la surbrillance de l'objet précédemment mis en surbrillance
                 if (highlightedObject != null)
@@ -76,6 +80,7 @@ public class ObjectInteraction : MonoBehaviour
             // Vérifie s'il y a un objet mis en surbrillance et s'il n'y a pas déjà un objet en train d'être tenu
             if (highlightedObject != null && !isGrabbing)
             {
+  
                 // Mettre en surbrillance l'objet touché
                 grabbedObject = highlightedObject;
                 isGrabbing = true;

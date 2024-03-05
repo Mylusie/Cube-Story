@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43460017, g: 0.4815958, b: 0.5625198, a: 1}
+  m_IndirectSpecularColor: {r: 0.43677562, g: 0.4843657, b: 0.5652703, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8272,7 +8272,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 85138650a0f26a9489152b55309c55ab, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.394
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11552,7 +11552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &852410750
 Transform:
   m_ObjectHideFlags: 0
@@ -11562,7 +11562,7 @@ Transform:
   m_GameObject: {fileID: 852410749}
   serializedVersion: 2
   m_LocalRotation: {x: -0.052124918, y: -0.000000029802322, z: -0.000000022351742, w: 0.99864066}
-  m_LocalPosition: {x: -0.5, y: -16.45, z: 1.41}
+  m_LocalPosition: {x: -0.5, y: -16.707, z: 2.749}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -13778,7 +13778,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 50bf1584c5abbe8438d2427cc67e7545, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.444
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23619,7 +23619,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4fa8f6eccc79c5d459e0466b465b172d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.394
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -24573,7 +24573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1691948908
 Transform:
   m_ObjectHideFlags: 0
@@ -25213,27 +25213,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562398283566368959, guid: 1e2193ab3a7eb184499ab33466e8f6f9, type: 3}
       propertyPath: m_Size.x
-      value: 0.27241135
+      value: 1.951703
       objectReference: {fileID: 0}
     - target: {fileID: 6562398283566368959, guid: 1e2193ab3a7eb184499ab33466e8f6f9, type: 3}
       propertyPath: m_Size.y
-      value: 0.2936592
+      value: 2.0646935
       objectReference: {fileID: 0}
     - target: {fileID: 6562398283566368959, guid: 1e2193ab3a7eb184499ab33466e8f6f9, type: 3}
       propertyPath: m_Size.z
-      value: 0.47994608
+      value: 1.5224277
       objectReference: {fileID: 0}
     - target: {fileID: 6562398283566368959, guid: 1e2193ab3a7eb184499ab33466e8f6f9, type: 3}
       propertyPath: m_Center.x
-      value: 0.015958786
+      value: 0.8556045
       objectReference: {fileID: 0}
     - target: {fileID: 6562398283566368959, guid: 1e2193ab3a7eb184499ab33466e8f6f9, type: 3}
       propertyPath: m_Center.y
-      value: 0.07372093
+      value: 0.52812004
       objectReference: {fileID: 0}
     - target: {fileID: 6562398283566368959, guid: 1e2193ab3a7eb184499ab33466e8f6f9, type: 3}
       propertyPath: m_Center.z
-      value: 0.004542142
+      value: 0.060289375
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

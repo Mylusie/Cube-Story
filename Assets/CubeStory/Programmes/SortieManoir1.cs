@@ -15,8 +15,8 @@ public class HighlightObjects : MonoBehaviour
 
     void Update()
     {
-        // Vérifier si les deux objets sont à moins de 3 mètre l'un de l'autre
-        if (keySortie != null && carpetSortie != null && Vector3.Distance(keySortie.transform.position, carpetSortie.transform.position) < 3f)
+        // Vérifier si les deux objets sont à moins de 4 mètre l'un de l'autre
+        if (keySortie != null && carpetSortie != null && Vector3.Distance(keySortie.transform.position, carpetSortie.transform.position) < 4f)
         {
             // Activer le clignotement des objets
             if (!isHighlighted)
@@ -25,7 +25,7 @@ public class HighlightObjects : MonoBehaviour
                 InvokeRepeating("ToggleHighlight", 0f, blinkInterval);
                 // Détruire le gameobject "key_sortie"
                 Destroy(keySortie);
-                Destroy(porteSortie);
+                porteSortie.SetActive(true);
             }
 
             else
