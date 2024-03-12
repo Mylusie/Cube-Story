@@ -54,7 +54,7 @@ public class AudioManagerVente : MonoBehaviour
             if (audioSources[i] != null && audioClips[i] != null)
             {
                 // Réglez le volume de l'AudioSource à 0.5
-                audioSources[i].volume = 0.5f;
+                audioSources[i].volume = 0.85f;
 
                 // Assigner le clip audio à la source audio
                 audioSources[i].clip = audioClips[i];
