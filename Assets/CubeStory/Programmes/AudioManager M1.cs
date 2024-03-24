@@ -49,14 +49,18 @@ public class AudioManagerM1: MonoBehaviour
 
     IEnumerator PlayAudioClipsWithDelay()
     {
+        Debug.Log("Je rentre");
         // Jouer les clips audio avec un délai de 2 secondes entre chaque
         for (int i = 0; i < audioSources.Length && i < audioClips.Length; i++)
         {
+            Debug.Log(audioSources.Length + "long");
             // Vérifier si la source audio et le clip audio existent
             if (audioSources[i] != null && audioClips[i] != null)
             {
                 // Réglez le volume de l'AudioSource à 0.5
                 audioSources[i].volume = 0.85f;
+
+                Debug.Log(i);
 
                 // Assigner le clip audio à la source audio
                 audioSources[i].clip = audioClips[i];
@@ -66,11 +70,16 @@ public class AudioManagerM1: MonoBehaviour
                 // Attendre que le clip audio en cours soit terminé
                 while (audioSources[i].isPlaying)
                 {
+                    Debug.Log("Je suis a l'intérieur");
                     // Mettre à jour les matériaux des personnages
                     UpdateCharacterMaterials(i);
 
+                    Debug.Log("Je suis a l'bru");
                     yield return null;
+                    
                 }
+
+                Debug.Log("finit");
                  // Vérifier si c'est le dernier clip audio et qu'il est terminé
                 if (i == audioSources.Length - 1 && !audioSources[i].isPlaying)
                     {
@@ -94,14 +103,16 @@ public class AudioManagerM1: MonoBehaviour
                     }
                 }
             }
-
+            Debug.Log("Attente");
             // Attendre 2 secondes avant de passer au clip suivant
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
     void UpdateCharacterMaterials(int index)
     {
+
+        Debug.Log("Je suis la");
         // Mettre à jour les matériaux des personnages en fonction de l'index du clip audio en cours
         if (knightAudioPlaying.ContainsKey(index) && knightAudioPlaying[index])
         {
@@ -112,6 +123,7 @@ public class AudioManagerM1: MonoBehaviour
         {
             // Mettre à jour le matériau du chevalier avec le matériau d'origine
             SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), originalKnightMaterial);
+            Debug.Log("Je suis lak");
         }
 
         if (fatherAudioPlaying.ContainsKey(index) && fatherAudioPlaying[index])
@@ -123,7 +135,9 @@ public class AudioManagerM1: MonoBehaviour
         {
             // Mettre à jour le matériau du père avec le matériau d'origine
             SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), originalFatherMaterial);
+            Debug.Log("Je suis laF");
         }
+        
     }
 
     void SetCharacterMaterial(Renderer characterRenderer, Material newMaterial)

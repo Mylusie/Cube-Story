@@ -15,7 +15,7 @@ public class XRCharacterController : MonoBehaviour
     private CharacterController characterController; // Référence au CharacterController
     private Vector3 moveDirection = Vector3.zero; // Direction de déplacement
     private Transform cameraTransform; // Référence à la transform de la caméra
-    public float sphereRadius; // Rayon de la sphère de collision
+
 
     void Start()
     {
@@ -63,7 +63,7 @@ public class XRCharacterController : MonoBehaviour
 
             // Réinitialiser la composante Y de la direction de déplacement à zéro
             moveDirection.y = 0;
-            Debug.Log("bloc");
+            //Debug.Log("bloc");
         }
 
         // Déplacer l'objet XR origin en fonction de la direction et de la vitesse
@@ -89,9 +89,6 @@ public class XRCharacterController : MonoBehaviour
 
      void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        // Vérifier si l'objet en collision est la sphère à ignorer
-        if (hit.gameObject == sphereToIgnore)
-            return;
 
         // Vérifier si l'objet en collision est sur un plan horizontal (XZ)
         if (Mathf.Abs(hit.normal.y) < 0.5f)
