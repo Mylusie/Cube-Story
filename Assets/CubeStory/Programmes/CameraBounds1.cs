@@ -5,33 +5,25 @@ public class CameraBound1 : MonoBehaviour
     public Transform cameraTransform; // Référence à la transform de la caméra
     public GameObject cylinder; // Le cylindre qui définit les limites
     public GameObject gameObjectToActivate; // Référence au GameObject à activer
+    public GameObject gameObjectToActivate2; // Référence au GameObject à activer
     
     void Update()
     {
         // Détecter la sortie du cylindre
-        if (IsCameraOutsideCylinder())
+        if (!IsCameraOutsideCylinder())
         {
             Debug.Log(IsCameraOutsideCylinder());
             
-            // Désactiver le composant XRCharacterController du GameObject XR Origin
-            XRCharacterController characterController = GetComponent<XRCharacterController>();
-            if (characterController != null)
-            {
-                characterController.enabled = false;
-            }
-            else
-            {
-                Debug.LogError("XRCharacterController component not found on XR Origin GameObject.");
-            }
             gameObjectToActivate.SetActive(true);
-            cylinder.SetActive(true);
+            gameObjectToActivate2.SetActive(true);
+            cylinder.SetActive(false);
         }
     }
 
     bool IsCameraOutsideCylinder()
     {
         // Obtenir le rayon du cylindre (supposant qu'il est aligné avec l'axe Y)
-        float cylinderRadius = cylinder.transform.localScale.x / 2f;
+        float cylinderRadius = 15;
 
 
         // Obtenir la position de la caméra sur le plan XZ (ignorer la hauteur Y)

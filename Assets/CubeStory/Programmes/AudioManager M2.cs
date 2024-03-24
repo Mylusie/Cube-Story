@@ -16,10 +16,12 @@ public class AudioManagerM2 : MonoBehaviour
     public GameObject Papier; // GameObject de la bourse
     public string sceneToLoad; // Nom de la scène à charger
     public string sceneToUnLoad; // Nom de la scène à charger
+    public Camera mainCamera; // Référence à la caméra principale
 
     private Dictionary<int, bool> knightAudioPlaying; // Dictionnaire pour suivre les clips audio du chevalier en cours de lecture
     private Dictionary<int, bool> fatherAudioPlaying; // Dictionnaire pour suivre les clips audio du père en cours de lecture
     private bool uneFois = true; // Permet d'avoir la bourse qu'une seule fois de fait
+    private bool onetime = true; // Permet d'avoir la bourse qu'une seule fois de fait
 
     void Start()
     {
@@ -81,6 +83,20 @@ public class AudioManagerM2 : MonoBehaviour
 
                         uneFois = false; // La bourse n'est plus nécessaire
                     }
+                    
+                    if(i==12 && onetime)
+                    {
+                        Debug.Log("Entrer");
+                       // Définir la couleur du ciel sur noir
+                        
+                        // Attendre la durée de l'animation
+                        yield return new WaitForSeconds(3);
+                        // Changer les Clear Flags de la caméra en Solid Color
+                        mainCamera.clearFlags = CameraClearFlags.SolidColor;
+
+                        Debug.Log("Done");
+                        onetime = false; // La bourse n'est plus nécessaire
+                    }
                     yield return null;
                 }
                  // Vérifier si c'est le dernier clip audio et qu'il est terminé
@@ -94,33 +110,39 @@ public class AudioManagerM2 : MonoBehaviour
             }
 
             // Attendre 2 secondes avant de passer au clip suivant
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
     void UpdateCharacterMaterials(int index)
     {
-        // Mettre à jour les matériaux des personnages en fonction de l'index du clip audio en cours
-        if (knightAudioPlaying.ContainsKey(index) && knightAudioPlaying[index])
+         if (knightMaterial != null)
         {
-            // Mettre à jour le matériau du chevalier avec le matériau spécifié
-            SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), knightMaterial);
-        }
-        else
-        {
-            // Mettre à jour le matériau du chevalier avec le matériau d'origine
-            SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), originalKnightMaterial);
+            // Mettre à jour les matériaux des personnages en fonction de l'index du clip audio en cours
+            if (knightAudioPlaying.ContainsKey(index) && knightAudioPlaying[index])
+            {
+                // Mettre à jour le matériau du chevalier avec le matériau spécifié
+                SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), knightMaterial);
+            }
+            else
+            {
+                // Mettre à jour le matériau du chevalier avec le matériau d'origine
+                SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), originalKnightMaterial);
+            }
         }
 
-        if (fatherAudioPlaying.ContainsKey(index) && fatherAudioPlaying[index])
+         if (fatherMaterial != null)
         {
-            // Mettre à jour le matériau du père avec le matériau spécifié
-            SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), fatherMaterial);
-        }
-        else
-        {
-            // Mettre à jour le matériau du père avec le matériau d'origine
-            SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), originalFatherMaterial);
+            if (fatherAudioPlaying.ContainsKey(index) && fatherAudioPlaying[index])
+            {
+                // Mettre à jour le matériau du père avec le matériau spécifié
+                SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), fatherMaterial);
+            }
+            else
+            {
+                // Mettre à jour le matériau du père avec le matériau d'origine
+                SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), originalFatherMaterial);
+            }
         }
     }
 

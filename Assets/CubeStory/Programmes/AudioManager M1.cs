@@ -15,6 +15,8 @@ public class AudioManagerM1: MonoBehaviour
     public Material originalFatherMaterial; // Matériau d'origine pour le père
     public Animator Anim; // GameObject de la bourse
     public GameObject Cyl;
+    public GameObject Cam;
+    public GameObject Desact;
 
     private Dictionary<int, bool> knightAudioPlaying; // Dictionnaire pour suivre les clips audio du chevalier en cours de lecture
     private Dictionary<int, bool> fatherAudioPlaying; // Dictionnaire pour suivre les clips audio du père en cours de lecture
@@ -50,6 +52,7 @@ public class AudioManagerM1: MonoBehaviour
     IEnumerator PlayAudioClipsWithDelay()
     {
         Debug.Log("Je rentre");
+         float totalClipLength = 0f;
         // Jouer les clips audio avec un délai de 2 secondes entre chaque
         for (int i = 0; i < audioSources.Length && i < audioClips.Length; i++)
         {
@@ -65,47 +68,43 @@ public class AudioManagerM1: MonoBehaviour
                 // Assigner le clip audio à la source audio
                 audioSources[i].clip = audioClips[i];
                 // Jouer le son
+                // Attendre 2 secondes avant de passer au clip suivant
+                if(i== 0){
+                    yield return new WaitForSeconds(9.5f);
+                }
+                
                 audioSources[i].Play();
 
-                // Attendre que le clip audio en cours soit terminé
+                             // Attendre que le clip audio en cours soit terminé
                 while (audioSources[i].isPlaying)
                 {
-                    Debug.Log("Je suis a l'intérieur");
                     // Mettre à jour les matériaux des personnages
                     UpdateCharacterMaterials(i);
-
-                    Debug.Log("Je suis a l'bru");
+                    Debug.Log("Je");
                     yield return null;
                     
+                    // Charger une nouvelle scène et décharger la scène actuelle
+                    
                 }
+                    
+                
 
-                Debug.Log("finit");
+                Debug.Log(audioSources[i].isPlaying);
                  // Vérifier si c'est le dernier clip audio et qu'il est terminé
                 if (i == audioSources.Length - 1 && !audioSources[i].isPlaying)
                     {
-                        
-                        // Charger une nouvelle scène et décharger la scène actuelle
-                        Anim.SetBool("Finit audio", true);
 
-                        timerActive = true;
-                    }
-
-                if (timerActive)
-                {
-                    timer += Time.deltaTime;
-
-                    if (timer >= 5f)
-                    {
-                        timerActive = false;
-
-                        // Afficher le GameObject
+                        Debug.Log("Je suis");
                         Cyl.SetActive(true);
+                        Desact.SetActive(false);
+                        Debug.Log("Je suisla");
+                        
                     }
-                }
+
             }
             Debug.Log("Attente");
             // Attendre 2 secondes avant de passer au clip suivant
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -113,31 +112,38 @@ public class AudioManagerM1: MonoBehaviour
     {
 
         Debug.Log("Je suis la");
-        // Mettre à jour les matériaux des personnages en fonction de l'index du clip audio en cours
-        if (knightAudioPlaying.ContainsKey(index) && knightAudioPlaying[index])
+          if (knightMaterial != null)
         {
-            // Mettre à jour le matériau du chevalier avec le matériau spécifié
-            SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), knightMaterial);
-        }
-        else
-        {
-            // Mettre à jour le matériau du chevalier avec le matériau d'origine
-            SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), originalKnightMaterial);
-            Debug.Log("Je suis lak");
+            // Mettre à jour les matériaux des personnages en fonction de l'index du clip audio en cours
+            if (knightAudioPlaying.ContainsKey(index) && knightAudioPlaying[index])
+            {
+                // Mettre à jour le matériau du chevalier avec le matériau spécifié
+                SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), knightMaterial);
+                Debug.Log("Je suis laok");
+            }
+            else
+            {
+                // Mettre à jour le matériau du chevalier avec le matériau d'origine
+                SetCharacterMaterial(GameObject.FindWithTag("Knight").GetComponent<Renderer>(), originalKnightMaterial);
+                Debug.Log("Je suis lak");
+            }
         }
 
-        if (fatherAudioPlaying.ContainsKey(index) && fatherAudioPlaying[index])
+          if (fatherMaterial != null)
         {
-            // Mettre à jour le matériau du père avec le matériau spécifié
-            SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), fatherMaterial);
+            if (fatherAudioPlaying.ContainsKey(index) && fatherAudioPlaying[index])
+            {
+                // Mettre à jour le matériau du père avec le matériau spécifié
+                SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), fatherMaterial);
+                Debug.Log("Je suis laof");
+            }
+            else
+            {
+                // Mettre à jour le matériau du père avec le matériau d'origine
+                SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), originalFatherMaterial);
+                Debug.Log("Je suis laF");
+            }
         }
-        else
-        {
-            // Mettre à jour le matériau du père avec le matériau d'origine
-            SetCharacterMaterial(GameObject.FindWithTag("Father").GetComponent<Renderer>(), originalFatherMaterial);
-            Debug.Log("Je suis laF");
-        }
-        
     }
 
     void SetCharacterMaterial(Renderer characterRenderer, Material newMaterial)

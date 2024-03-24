@@ -8,30 +8,21 @@ public class LancementAudio : MonoBehaviour
     
     void Update()
     {
+        Debug.Log(!IsCameraOutsideCylinder());
         // Détecter la sortie du cylindre
         if (!IsCameraOutsideCylinder())
         {
-            Debug.Log(IsCameraOutsideCylinder());
             
-            // Désactiver le composant XRCharacterController du GameObject XR Origin
-            AudioSource characterController = GetComponent<AudioSource>();
-            if (characterController != null)
-            {
-                characterController.enabled = false;
-            }
-            else
-            {
-                Debug.LogError("XRCharacterController component not found on XR Origin GameObject.");
-            }
-            gameObjectToActivate.SetActive(false);
+           
+            gameObjectToActivate.SetActive(true);
+            cylinder.SetActive(false);
         }
     }
 
     bool IsCameraOutsideCylinder()
     {
         // Obtenir le rayon du cylindre (supposant qu'il est aligné avec l'axe Y)
-        float cylinderRadius = cylinder.transform.localScale.x / 2f;
-
+        float cylinderRadius = 75;
 
         // Obtenir la position de la caméra sur le plan XZ (ignorer la hauteur Y)
         Vector3 cameraPositionXZ = new Vector3(cameraTransform.position.x, 0, cameraTransform.position.z);
@@ -46,8 +37,10 @@ public class LancementAudio : MonoBehaviour
         bool isOutside = distanceToCylinderCenter > cylinderRadius;
 
         Debug.Log(distanceToCylinderCenter + "Distance avec le centre du cyclindre");
-        Debug.Log(cylinderRadius + "rayon");
 
+        Debug.Log(cylinderRadius + "rayon");
+        
+        
         return isOutside;
     }
 }

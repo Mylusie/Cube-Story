@@ -5,6 +5,7 @@ public class CameraBound : MonoBehaviour
     public Transform cameraTransform; // Référence à la transform de la caméra
     public GameObject cylinder; // Le cylindre qui définit les limites
     public GameObject gameObjectToActivate; // Référence au GameObject à activer
+    public GameObject gameObjectTodesActivate;
     
     void Update()
     {
@@ -24,6 +25,7 @@ public class CameraBound : MonoBehaviour
                 Debug.LogError("XRCharacterController component not found on XR Origin GameObject.");
             }
             gameObjectToActivate.SetActive(true);
+            gameObjectTodesActivate.SetActive(false);
         }
     }
 
