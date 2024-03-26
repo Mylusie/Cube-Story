@@ -47,7 +47,7 @@ public class CameraBound : MonoBehaviour
         // La caméra est à l'extérieur du cylindre si la distance à son centre est supérieure à son rayon
         bool isOutside = distanceToCylinderCenter > cylinderRadius;
 
-        //Debug.Log(distanceToCylinderCenter + "Distance avec le centre du cyclindre");
+        Debug.Log(distanceToCylinderCenter + "Distance avec le centre du cyclindre");
         //Debug.Log(cylinderRadius + "rayon");
 
         return isOutside;
