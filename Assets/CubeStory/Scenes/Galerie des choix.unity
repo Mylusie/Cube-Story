@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43460038, g: 0.48159623, b: 0.56252044, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 119691777}
   - component: {fileID: 119691775}
   - component: {fileID: 119691776}
+  - component: {fileID: 119691778}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -459,7 +460,7 @@ Transform:
   m_GameObject: {fileID: 119691772}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 25.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -521,7 +522,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -671,6 +672,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introAudioSource: {fileID: 119691776}
   introClip: {fileID: 8300000, guid: 614a32725d454d04dbe6c7f753a75b1c, type: 3}
+--- !u!167 &119691778
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119691772}
+  m_Enabled: 0
+  m_MinDistance: 10
+  m_MaxDistance: 15
+  m_ReverbPreset: 0
+  m_Room: -10000
+  m_RoomHF: -10000
+  m_DecayTime: 1
+  m_DecayHFRatio: 1
+  m_Reflections: -2602
+  m_ReflectionsDelay: 0.007
+  m_Reverb: 200
+  m_ReverbDelay: 0.011
+  m_HFReference: 5000
+  m_Diffusion: 0
+  m_Density: 0
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!4 &122198907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: fe8232f2d2f3aff44a1c3b3b1b841658, type: 3}

@@ -10,10 +10,12 @@ public class XRCharacterController : MonoBehaviour
     public KeyCode strafeRightKey = KeyCode.D; // Touche pour aller à droite
 
     public List<AudioClip> audioClips; // Liste des clips audio à prendre en compte
+    public GameObject sphereToIgnore; // Objet à ignorer lors des collisions
 
     private CharacterController characterController; // Référence au CharacterController
     private Vector3 moveDirection = Vector3.zero; // Direction de déplacement
     private Transform cameraTransform; // Référence à la transform de la caméra
+
 
     void Start()
     {
@@ -61,10 +63,12 @@ public class XRCharacterController : MonoBehaviour
 
             // Réinitialiser la composante Y de la direction de déplacement à zéro
             moveDirection.y = 0;
+            //Debug.Log("bloc");
         }
 
         // Déplacer l'objet XR origin en fonction de la direction et de la vitesse
         characterController.Move(moveDirection.normalized * speed * Time.deltaTime);
+
     }
 
     bool IsAudioClipPlaying()
@@ -83,12 +87,22 @@ public class XRCharacterController : MonoBehaviour
         return false;
     }
 
-    void OnControllerColliderHit(ControllerColliderHit hit)
+     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        // Empêcher le mouvement dans la direction de la collision
-        if (Vector3.Dot(moveDirection.normalized, -hit.normal) > 1f)
+
+        // Vérifier si l'objet en collision est sur un plan horizontal (XZ)
+        if (Mathf.Abs(hit.normal.y) < 0.5f)
         {
-            moveDirection = Vector3.zero;
+            // Vérifier si l'objet en collision n'est pas la sphère
+            if (hit.gameObject.tag != "SphereTag") // Remplacez "SphereTag" par le tag de votre sphère
+            {
+                // Bloquer le mouvement
+                moveDirection = Vector3.zero;
+                Debug.Log("Collision horizontale détectée");
+            }
         }
     }
+
+
+
 }

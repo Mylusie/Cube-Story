@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Knight
   - Father
+  - SphereTag
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CollisionLayer
   - Water
   - UI
   - Interaction
