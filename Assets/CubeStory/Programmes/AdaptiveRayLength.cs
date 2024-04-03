@@ -12,7 +12,7 @@ public class AdaptiveRayLength : MonoBehaviour
     {
         RaycastHit hit;
 
-        Debug.DrawRay(transform.position, transform.forward * maxRayLength  , Color.red);
+        //Debug.DrawRay(transform.position, transform.forward * maxRayLength  , Color.red);
 
         if (rayInteractor.TryGetCurrent3DRaycastHit(out hit))
         {

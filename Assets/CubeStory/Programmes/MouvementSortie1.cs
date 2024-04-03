@@ -8,8 +8,11 @@ public class DeplacementCameraSortie1 : MonoBehaviour
     public float seuilDistance = 0.01f;// Seuil de distance pour considérer que la caméra est arrivée à la nouvelle position
     public GameObject MainCamera;
     private bool unite = false;
+    public AnimationClip animationClip;
+    private bool disableScheduled = false;
 
     //private bool enDeplacement = false; // Indique si la caméra est en cours de déplacement
+
 
     void Update()
     {
@@ -61,7 +64,26 @@ public class DeplacementCameraSortie1 : MonoBehaviour
 
                 Debug.Log("2"); 
                 animator.enabled = true;
+                float animationDuration = animationClip.length;
+                Invoke(nameof(DisableAnimator), animationDuration/2);
+                Debug.Log("disableScheduled reussi");
             }
+        }
+    }
+    void DisableAnimator()
+    {
+        Animator animator = gameObject.GetComponent<Animator>();
+        // Désactive l'Animator
+        animator.enabled = false;
+        disableScheduled = true; // Indique que la désactivation a été programmée
+    }
+
+    // Assurez-vous de désactiver l'appel Invoke si l'objet est désactivé avant que le délai soit écoulé
+    private void OnDisable()
+    {
+        if (!disableScheduled)
+        {
+            CancelInvoke(nameof(DisableAnimator));
         }
     }
 }
