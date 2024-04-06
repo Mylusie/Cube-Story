@@ -8,7 +8,7 @@ public class LancementAudio : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(!IsCameraOutsideCylinder());
+        // Debug.Log(!IsCameraOutsideCylinder());
         // Détecter la sortie du cylindre
         if (!IsCameraOutsideCylinder())
         {
@@ -36,9 +36,9 @@ public class LancementAudio : MonoBehaviour
         // La caméra est à l'extérieur du cylindre si la distance à son centre est supérieure à son rayon
         bool isOutside = distanceToCylinderCenter > cylinderRadius;
 
-        Debug.Log(distanceToCylinderCenter + "Distance avec le centre du cyclindre");
+        // Debug.Log(distanceToCylinderCenter + "Distance avec le centre du cyclindre");
 
-        Debug.Log(cylinderRadius + "rayon");
+        // Debug.Log(cylinderRadius + "rayon");
         
         
         return isOutside;

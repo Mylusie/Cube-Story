@@ -21,6 +21,7 @@ public class CollisionInteractionGrab : MonoBehaviour
     private float grabDistance = 5.0f; // Distance à laquelle l'objet est tenu de la caméra
     private GameObject GrabableObject;
 
+
     void Update()
     {
         RaycastHit hit;

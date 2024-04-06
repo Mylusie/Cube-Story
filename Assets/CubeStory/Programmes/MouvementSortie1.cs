@@ -45,12 +45,7 @@ public class DeplacementCameraSortie1 : MonoBehaviour
     }
 
     // Fonction pour démarrer le déplacement de la caméra vers la nouvelle position
-    //public void DeplacerVersNouvellePosition(GameObject targetGameObject)
-    //{
-        //enDeplacement = false;
-        //cible = targetGameObject;
-    //}
-    void ActivateAnimator(GameObject gameObject)
+        void ActivateAnimator(GameObject gameObject)
         
     {
         Debug.Log("3 ");
