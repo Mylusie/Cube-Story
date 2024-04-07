@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.43460017, g: 0.4815958, b: 0.5625198, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2067,14 +2067,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173697229}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.0000000037252894, y: -0.23583205, z: 0.000000005587934, w: 0.97179383}
   m_LocalPosition: {x: -4.81, y: 7.3, z: 0.43}
   m_LocalScale: {x: 8, y: 3, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 787332063}
   m_Father: {fileID: 852410750}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -27.281, z: 0}
 --- !u!65 &173697231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11750,14 +11750,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771124264}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.000000007450579, y: 0.279083, z: -0.000000002793967, w: 0.96026695}
   m_LocalPosition: {x: 6.13, y: 7.299999, z: 0.43}
   m_LocalScale: {x: 8, y: 3, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 340666572}
   m_Father: {fileID: 852410750}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 32.411, z: 0}
 --- !u!65 &771124266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13194,8 +13194,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852410749}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.052124918, y: -0.000000029802322, z: -0.000000022351742, w: 0.99864066}
-  m_LocalPosition: {x: -0.5, y: -16.707, z: 2.749}
+  m_LocalRotation: {x: -0.05175921, y: 0.11808769, z: -0.0061637186, w: 0.9916342}
+  m_LocalPosition: {x: -0.5, y: -17.17, z: 0.96}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -13203,7 +13203,7 @@ Transform:
   - {fileID: 173697230}
   - {fileID: 771124265}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.808, y: 13.653, z: -1.408}
 --- !u!1001 &872118243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30128,8 +30128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToInteractWith: {fileID: 1868250766}
-  AcceptButton: 109
-  throwButton: 116
+  AcceptButton: 122
+  throwButton: 115
   highlightMaterial: {fileID: 2100000, guid: 7b4760fd03db83c40bf0a638e48211fa, type: 2}
   Affichage: {fileID: 852410749}
   AudiomanActu: {fileID: 1658650050}
