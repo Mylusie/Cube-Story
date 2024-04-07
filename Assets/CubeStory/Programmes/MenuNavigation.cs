@@ -14,15 +14,15 @@ public class MenuNavigation : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             MoveSelectionUp();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             MoveSelectionDown();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Return))
+        else if (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.Return))
         {
             ActivateSelectedButton();
         }
