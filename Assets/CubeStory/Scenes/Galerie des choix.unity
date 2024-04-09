@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708984, g: 0.37837017, b: 0.35722536, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1087,7 +1087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1806843409170209191, guid: 0a94bd08074ccfd4e938cda201930e63, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1806843409170209191, guid: 0a94bd08074ccfd4e938cda201930e63, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2276,7 +2276,7 @@ MonoBehaviour:
   objectToInteractWith: {fileID: 989249411}
   sceneToLoad: Iponia - Vente
   sceneToUnload: Galerie des choix
-  selectButton: 32
+  selectButton: 110
   highlightMaterial: {fileID: 2100000, guid: 7b4760fd03db83c40bf0a638e48211fa, type: 2}
 --- !u!1001 &1001558772
 PrefabInstance:
