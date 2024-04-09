@@ -2276,7 +2276,7 @@ MonoBehaviour:
   objectToInteractWith: {fileID: 989249411}
   sceneToLoad: Iponia - Vente
   sceneToUnload: Galerie des choix
-  selectButton: 32
+  selectButton: 110
   highlightMaterial: {fileID: 2100000, guid: 7b4760fd03db83c40bf0a638e48211fa, type: 2}
 --- !u!1001 &1001558772
 PrefabInstance:
