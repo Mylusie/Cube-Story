@@ -15,6 +15,7 @@ public class DeplacementCameraSortie1 : MonoBehaviour
     private bool disableScheduled = false;
     public GameObject disparitionIndice;
     public GameObject affichageRequete;
+    public GameObject indiceSortie;
 
     private void Start()
     {
@@ -37,6 +38,8 @@ public class DeplacementCameraSortie1 : MonoBehaviour
 
             //transform.position = Vector3.MoveTowards(transform.position, cible.transform.position, vitesseDeplacement * Time.deltaTime);
             //Debug.Log("Position : " + transform.position);
+
+            indiceSortie.SetActive(false);
 
             if (disparitionIndice.activeSelf)
             {
