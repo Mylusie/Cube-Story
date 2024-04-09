@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class CollisionInteractionGrab2 : MonoBehaviour
@@ -10,6 +11,7 @@ public class CollisionInteractionGrab2 : MonoBehaviour
     private GameObject scriptdeplacements;
     public GameObject collisionIndPrefab;
     private GameObject collisionInd;
+    public GameObject disparitionIndice;
 
     public LayerMask interactionLayer; // Layer contenant les objets interactifs
     public Material highlightMaterial; // Matériau de surbrillance
@@ -17,6 +19,7 @@ public class CollisionInteractionGrab2 : MonoBehaviour
     private Renderer lastRenderer; // Dernier Renderer survolé
     public GameObject cube;
     public GameObject affichageCombinaison;
+    public GameObject affichageRequeteParchemin;
 
     private GameObject highlightedObject;
     private GameObject grabbedObject = null;
@@ -27,10 +30,7 @@ public class CollisionInteractionGrab2 : MonoBehaviour
     public GameObject exitObject;  // Gameobject utilisé pour la 2e sortie du manoir
     public GameObject indiceSortie; // GameObject qui va afficher un text donnant des indices pour sortir
 
-    private void Start()
-    {
-        affichageCombinaison.SetActive(false);
-    }
+    
     void Update()
     {
         RaycastHit hit;
@@ -120,6 +120,10 @@ public class CollisionInteractionGrab2 : MonoBehaviour
                     grabbedObject = GrabableObject;
                     grabbedObject.GetComponent<Rigidbody>().useGravity = false;
                     collisionIndPrefab.SetActive(false);
+                    if (GrabableObject == disparitionIndice)
+                    {
+                        disparitionIndice.SetActive(false);
+                    }
                 }
                 Debug.Log(affichageCombinaison.activeSelf);
                 if (GrabableObject == cube)
@@ -139,6 +143,14 @@ public class CollisionInteractionGrab2 : MonoBehaviour
                         XRCharacterController xrCharacterControllerComponent = xrOriginObject.GetComponent<XRCharacterController>();
                         xrCharacterControllerComponent.enabled = true;
                     }
+                    if (affichageRequeteParchemin.activeSelf)
+                    {
+                        affichageRequeteParchemin.SetActive(false);
+                    }
+                }
+                if(GrabableObject==disparitionIndice)
+                {
+                    disparitionIndice.SetActive(false);
                 }
             }
             // Si la touche N est relâchée
@@ -180,5 +192,6 @@ public class CollisionInteractionGrab2 : MonoBehaviour
             }
         }
     }
+    
 }
 

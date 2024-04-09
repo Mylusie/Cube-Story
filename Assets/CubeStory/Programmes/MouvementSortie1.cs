@@ -1,4 +1,6 @@
+using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 
 public class DeplacementCameraSortie1 : MonoBehaviour
 {
@@ -7,10 +9,18 @@ public class DeplacementCameraSortie1 : MonoBehaviour
     public GameObject porteSortie; // GameObject dont l'état d'activation contrôle le déplacement de la caméra
     public float seuilDistance = 0.01f;// Seuil de distance pour considérer que la caméra est arrivée à la nouvelle position
     public GameObject MainCamera;
+    public Material highlightMaterial; // Matériau de surbrillance
     private bool unite = false;
     public AnimationClip animationClip;
     private bool disableScheduled = false;
+    public GameObject disparitionIndice;
+    public GameObject affichageRequete;
 
+    private void Start()
+    {
+        affichageRequete.SetActive(false);
+        porteSortie.SetActive(false);   
+    }
     //private bool enDeplacement = false; // Indique si la caméra est en cours de déplacement
 
 
@@ -27,6 +37,23 @@ public class DeplacementCameraSortie1 : MonoBehaviour
 
             //transform.position = Vector3.MoveTowards(transform.position, cible.transform.position, vitesseDeplacement * Time.deltaTime);
             //Debug.Log("Position : " + transform.position);
+
+            if (disparitionIndice.activeSelf)
+            {
+                affichageRequete.SetActive(true);
+                return;
+            }
+
+            affichageRequete.SetActive(false);
+            Renderer renderer = porteSortie.GetComponent<Renderer>();
+            renderer.material = highlightMaterial;
+
+            Debug.Log(Vector3.Distance(transform.position, porteSortie.transform.position));
+
+            if (Vector3.Distance(transform.position, porteSortie.transform.position)>16)
+            {
+                return;
+            }
 
             ActivateAnimator(MainCamera);
             unite = true;

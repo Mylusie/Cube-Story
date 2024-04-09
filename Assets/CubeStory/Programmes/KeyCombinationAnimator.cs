@@ -7,12 +7,14 @@ public class KeyCombinationAnimator : MonoBehaviour
 {
     public GameObject XROrigin;
     public AnimationClip animationClip;
+    public GameObject disparitionIndice;
 
     // Les touches de la combinaison
     public KeyCode[] keyCombination = { KeyCode.S, KeyCode.D, KeyCode.A, KeyCode.W };
     public GameObject cube;
     public GameObject affichageCombinaison;
     public GameObject affichageCombinaisonCode;
+    public GameObject affichageRequeteParchemin;
     private int currentKeyInd = 0;
     private bool disableScheduled = false;
     private bool isActive = false;
@@ -23,10 +25,24 @@ public class KeyCombinationAnimator : MonoBehaviour
     private TextMeshPro textMeshProComponent;
     private bool sortieReussie = false;
 
+    private void Start()
+    {
+        affichageCombinaison.SetActive(false);
+        affichageRequeteParchemin.SetActive(false);
+    }
     void Update()
     {
         if (!affichageCombinaison.activeSelf)
+        {
             return;
+        }
+            
+        if (disparitionIndice.activeSelf)
+        {
+            affichageRequeteParchemin.SetActive(true);
+            return;
+        }    
+        affichageRequeteParchemin.SetActive(false);
 
         if (Input.anyKeyDown)
         {
@@ -113,6 +129,8 @@ public class KeyCombinationAnimator : MonoBehaviour
     {
         Animator animator = XROrigin.GetComponent<Animator>();
         animator.enabled = true;
+        affichageCombinaison.SetActive(false);
+        cube.SetActive(false);
     }
     void ChangeCodeColorGreen()
     {
