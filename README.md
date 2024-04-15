@@ -31,7 +31,7 @@ Après ces deux scènes d'introduction, vient la scène ou aller pouvoir vous d�
 - Un rayon qui permet d'attraper les objets et de les garder avec nous si maintenu.
 * Un systeme de déplacement en continuous move ou vous vous diriger en avant en fonction de la ou vous regarder.
 + Des audios qui vous donneront les directives a suivre.
-- Un systeme de sortie avec un object a trouvé.
+- Un systeme de sortie avec un object a trouver.
 * Des indications de panneau pour aider dans la recherche qui viennent changer d'écriture en fonction de l'avancé
 + Animation pour la sortie
 - Un périmètre autour de la maison afin de pouvoir laisser le joueur visité et dès qu'il sort du perimetre alors la suite de l'histoire se lance
