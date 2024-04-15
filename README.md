@@ -15,7 +15,7 @@ Profitez d'un apperçu de l'écran initial, avant de rentrer en immersion parmis
 ![alt text](Accueil-1.png)</center>
 <p style="text-align:justify;">La première histoire que nous proposerons en exclusivité est **La Légende d'Iponia**, imaginée et écrite par Aurore Le Mercier.</p>
 
-## ***Choix des histoires**
+## ***Choix des histoires***
 
 Au départ, vous allez arriver dans une galerie. Dans cette galerie, les histoires vous seront proposé et vous pourrez les choisir grace a un rayon qui rends les tableaux selectionnables. En l'occurence, nous n'avons qu'une histoire et donc un seul tableau qui a cette possibilité.
 
