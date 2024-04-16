@@ -93,12 +93,13 @@ public class AudioManagerM1: MonoBehaviour
                  // Vérifier si c'est le dernier clip audio et qu'il est terminé
                 if (i == audioSources.Length - 1 && !audioSources[i].isPlaying)
                     {
-
-                        Debug.Log("Je suis");
-                        Cyl.SetActive(true);
-                        Desact.SetActive(false);
-                        Debug.Log("Je suisla");
-                        
+                        if (Cyl != null || Desact != null)
+                        { 
+                            Debug.Log("Je suis");
+                            Cyl.SetActive(true);
+                            Desact.SetActive(false);
+                            Debug.Log("Je suisla");
+                        }
                     }
 
             }

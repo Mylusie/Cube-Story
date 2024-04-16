@@ -2052,7 +2052,7 @@ GameObject:
   - component: {fileID: 173697233}
   - component: {fileID: 173697232}
   - component: {fileID: 173697231}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3415,7 +3415,7 @@ GameObject:
   - component: {fileID: 340666572}
   - component: {fileID: 340666574}
   - component: {fileID: 340666573}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Que souhaitez vous faire ? (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11735,7 +11735,7 @@ GameObject:
   - component: {fileID: 771124268}
   - component: {fileID: 771124267}
   - component: {fileID: 771124266}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11845,7 +11845,7 @@ GameObject:
   - component: {fileID: 787332063}
   - component: {fileID: 787332065}
   - component: {fileID: 787332064}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Que souhaitez vous faire ? (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23829,7 +23829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3127728407712097239, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Height
-      value: 1.2
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 3127728407712097239, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Radius
@@ -24081,15 +24081,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: 0.566
       objectReference: {fileID: 0}
     - target: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9168142743249570444, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Enabled
@@ -30149,7 +30149,7 @@ GameObject:
   - component: {fileID: 1874264382}
   - component: {fileID: 1874264384}
   - component: {fileID: 1874264383}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Que souhaitez vous faire ?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30933,7 +30933,7 @@ GameObject:
   - component: {fileID: 1899935699}
   - component: {fileID: 1899935698}
   - component: {fileID: 1899935697}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

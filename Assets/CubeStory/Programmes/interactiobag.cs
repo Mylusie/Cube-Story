@@ -40,13 +40,7 @@ public class InteractionBag : MonoBehaviour
                 Affichage.SetActive(true);
             }
         }
-        else
-        {
-            if (Affichage != null)
-            {
-                Affichage.SetActive(false);
-            }
-        }
+
     }
 
     private bool IsObjectHighlighted(GameObject obj)
